@@ -4,7 +4,7 @@
 #define DEGREE_H
 
 
-// test
+// testing
 
 
 enum DegreeProgram { NETWORK, SECURITY, SOFTWARE, UNKNOWN }; 
