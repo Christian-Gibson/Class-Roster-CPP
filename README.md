@@ -1,3 +1,4 @@
-![C867ConsoleScreen1](https://user-images.githubusercontent.com/103766177/221431287-4dcf7100-b0cb-4152-a993-3dcdab4baa85.png)
+![ClassRosterPreviewImage](https://user-images.githubusercontent.com/103766177/221431326-9782ce81-9373-4791-914a-d26e941b61fb.png)
+
 # Class-Roster-CPP
 A class roster console application in C++
