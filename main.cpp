@@ -30,6 +30,7 @@ Create all objects dynamically with NEW and destroy them correctly with DELETE (
 #include "roster.h"
 #include <iomanip>
 #include <conio.h>
+#include <fstream>
 
 using namespace std;
 
@@ -51,14 +52,14 @@ int main() {
 
 
 
-	//	classRoster.add("5th pupa", "Papacokne", "Fjoiejf", "joiefk", 30, 11, 22, 33, SOFTWARE);
-	//	classRoster.add("6th pupa", "CEFFIOUlkaefEJe", "FFEFFf", "joiefk", 30, 11, 22, 33, SOFTWARE);
-	//	classRoster.add("9 pupa", "Papacokne", "Fjoiejf", "joiefk", 30, 11, 22, 33, SOFTWARE);
+	
 
 
 	int arr1[3] = {  40 , 69, 70};
 	int arr2[3] = { 1, 2, 3 };
 	
+
+	/*
 	const string studentData[] =
 	{ "A1,James,Simms,James1989@gmai l.com,20,39,44,40,NETWORK",
 	"A2,Penelope,Erickson,MissEricksonP_1990@gmailcom,19,55,20,48,SECURITY", //PERSONAL DATA TO BE PARSED AND ADDED TO CLASS ROSTER PER RUBRIC.
@@ -145,7 +146,137 @@ int main() {
 
 	}
 
+	*/
 
+	int commaLocation;
+	int spaceLocation;
+	std::string parsedData[9] = {};
+	std::string dataHolder[9] = {};
+
+	std::ifstream inputFile;
+	ofstream outputFile;
+	std::string strToParse;
+	
+
+
+
+
+
+
+	inputFile.open("fileText.txt");
+
+
+	if (!inputFile.is_open()) {
+
+
+
+		std::cout << "File could not be opened." << std::endl;
+
+		return 1;
+
+
+
+
+
+
+
+
+
+
+	}
+	else {
+
+		while (!inputFile.eof()) {
+
+
+		 //	inputFile >> strToParse; 
+
+			getline(inputFile, strToParse); //Get everything in the file up to the newline
+
+			
+		/*
+			if (strToParse.find(' ') != std::string::npos) {
+
+
+				spaceLocation = strToParse.find(' ');
+				strToParse.at(spaceLocation) = '*';
+
+
+
+
+			}
+			*/
+
+			while (strToParse.find(',') != std::string::npos) {
+
+				for (int i = 0; i < sizeof(parsedData) / sizeof(parsedData[i]); ++i) {
+
+
+
+
+					commaLocation = strToParse.find(',');
+					parsedData[i] = strToParse.substr(0, commaLocation);
+
+
+					strToParse.erase(0, commaLocation + 1);
+
+					dataHolder[i] = parsedData[i];
+
+
+				}
+
+
+
+
+			}
+			if (strToParse.find(',') == std::string::npos) {
+
+				parsedData[8] = strToParse;
+
+
+				dataHolder[8] = parsedData[8];
+
+
+
+
+
+				
+
+
+
+
+				classRoster.add(dataHolder[0], dataHolder[1], dataHolder[2], dataHolder[3], stoi(dataHolder[4]),
+					stoi(dataHolder[5]), stoi(dataHolder[6]), stoi(dataHolder[7]), Roster::strToDegree(dataHolder[8])); //Each students data added to the class roster.
+
+				
+
+
+				
+				
+
+			}
+
+
+			inputFile.ignore();
+
+
+
+
+
+
+
+
+		}
+
+
+
+
+
+
+
+
+
+	}
 	
 
 	

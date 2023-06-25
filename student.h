@@ -35,6 +35,7 @@ class Student {
 		int getDay2();
 		int getDay3();
 		DegreeProgram getDegreeProgram();
+		Student* myStudent = nullptr;
 
 		//Setters
 		void setStudentID(string studentID);
@@ -51,6 +52,11 @@ class Student {
 
 		Student();
 		Student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysToComplete[3], DegreeProgram studentDegree);
+
+		//Test
+		Student(string studentID, string firstName, string lastName, string emailAddress, int age, int day1, int day2, int day3, DegreeProgram studentDegree);
+		//Test
+
 
 		~Student(); //Destructor
 

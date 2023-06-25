@@ -1,0 +1,6 @@
+A1,James,Simms,James1989@gmail.com,20,39,44,40,NETWORK
+A2,Panalope,Erickson,MissEricksonP_1990@gmailcom,19,55,20,48,SECURITY
+A3,Jared,Costas,Your_lawyer99hotmail.com,19,24,43,23,SECURITY
+A4,Erica,Blandino,Erica.blandino@comcast.net,22,52,38,30,SOFTWARE
+A5,Christian,G,1337M4ST3R@winthrop.edu,31,34,31,48,SOFTWARE
+,

@@ -241,6 +241,25 @@ Student::Student(string studentID, string firstName, string lastName, string ema
 
 }
 
+// Test
+Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int day1, int day2, int day3, DegreeProgram studentDegree) {
+
+	StudentID = studentID;
+	FirstName = firstName;
+	LastName = lastName;
+	EmailAddress = emailAddress;
+	Age = age;
+
+	day1 = this->day1;
+	day2 = this->day2;
+	day3 = this->day3;
+
+	StudentDegree = studentDegree;
+
+
+
+}
+// Test
 
 Student::~Student() {
 
